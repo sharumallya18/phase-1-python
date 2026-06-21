@@ -1,0 +1,9 @@
+order_id,customer,amount,order_date,region
+1001,Asha,250.50,2026-06-01,North
+1002,Vikram,,2026-06-01,South
+1003,Meena,99.99,2026-06-02,North
+1004,Ravi,1200.00,,East
+1005,Asha,475.25,2026-06-03,North
+1006,,310.00,2026-06-03,West
+1007,Kiran,89.50,2026-06-04,South
+1008,Meena,-50.00,2026-06-04,North
