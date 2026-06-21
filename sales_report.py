@@ -33,7 +33,7 @@ with open("sales.csv", "r") as file: #automatically closes the file
         is_missing = not order_id
 
         if is_missing:
-            row_count+=1  
+            row_count+=1
 
 if valid_amount>0: #divided by 0 error fix
     average_sale=total/valid_amount
