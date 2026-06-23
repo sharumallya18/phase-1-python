@@ -10,20 +10,19 @@
 # Average sale: 339.32
 import csv
 
-with open("sales.csv","r") as file:
-    reader = csv.DictReader(file) # Earlier had used csv.reader(file)
+with open("sales.csv", "r") as file:
+    # DictReader = built-in class that reads a CSV file and maps each row into a dictionary
+    reader = csv.DictReader(file)  # Earlier had used csv.reader(file)
     # header = next(reader) # Skips the header row
     rows = list(reader)
 
     # row_count = sum(1 for row in reader)
     orders = sum(1 for row in rows if row["amount"].strip())
-    total_sum = sum(float(row["amount"]) for row in rows if row["amount"])  # Sums the 3rd column
-    avg_sale = total_sum/orders
-    print("Total Orders: ", len(rows) )
-    print("Orders with valid amount: ",orders)
+    # total_sum = sum(float(row["amount"]) for row in rows if row["amount"])  # Sums the 3rd column
+    # Sums the 3rd columns i.e., include this row IF the amount field is non-empty after stripping whitespace
+    total_sum = sum(float(row["amount"]) for row in rows if row["amount"].strip())
+    avg_sale = total_sum / orders
+    print("Total Orders: ", len(rows))
+    print("Orders with valid amount: ", orders)
     print("Total Sales: ", total_sum)
     print("Average sale: ", avg_sale)
-
-
-
-
